@@ -69,22 +69,22 @@ NS_ASSUME_NONNULL_BEGIN
 ///-----------------------------------------
 
 /**
- The acceptable HTTP status codes for responses. When non-`nil`, responses with status codes not contained by the set will result in an error during validation.
+ 响应的可接受的HTTP状态代码。当非' nil '时，状态码不包含在集合中的响应将在验证期间导致错误。
 
  See http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
  */
 @property (nonatomic, copy, nullable) NSIndexSet *acceptableStatusCodes;
 
 /**
- The acceptable MIME types for responses. When non-`nil`, responses with a `Content-Type` with MIME types that do not intersect with the set will result in an error during validation.
+ 响应可接受的MIME类型。当非' nil '时，MIME类型的' Content-Type '响应不与集合相交将在验证期间导致错误。
+
  */
 @property (nonatomic, copy, nullable) NSSet <NSString *> *acceptableContentTypes;
 
 /**
- Validates the specified response and data.
+ 验证指定的响应和数据。
 
- In its base implementation, this method checks for an acceptable status code and content type. Subclasses may wish to add other domain-specific checks.
-
+ 在其基本实现中，此方法检查可接受的状态代码和内容类型。子类可能希望添加其他特定于域的检查。
  @param response The response to be validated.
  @param data The data associated with the response.
  @param error The error that occurred while attempting to validate the response.
